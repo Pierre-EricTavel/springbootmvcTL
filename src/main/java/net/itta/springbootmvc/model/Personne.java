@@ -21,14 +21,14 @@ public class Personne implements Serializable {
 
     private Integer id;
     
-    //@Size( max=25,message = "nom trop long ou trop court")
+    @Size( max=25,message = "nom trop long ou trop court")
     private String nom;
     
-    //@Size(min=1, max=40,message = "prenom trop long ou trop court")
+    @Size(min=1, max=40,message = "prenom trop long ou trop court")
     private String prenom;
 
-    //@PastOrPresent()
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @PastOrPresent()
+    @DateTimeFormat(pattern = "yyyy-MM-dd",iso = DateTimeFormat.ISO.DATE)
     private Date naissance;
 
     //@Constraint(validatedBy = ConstraintValidator.class)
